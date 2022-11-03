@@ -2,30 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
-{
-    public bool isRandomPickup;
+public class Pickup : MonoBehaviour {
     public int ammo;
-    //public static int numPickups = 0;
+    public PowerupEffect powerup;
+    //public void OnTr(Collider collider) {
+    //    if (collider.gameObject.CompareTag("Player")) {
+    //        Debug.Log(collider.gameObject.name);
+    //        //collider.gameObject.transform.parent.Get0Component<TankControllerTest>().Pickup(ammo);
+    //        Destroy(gameObject);
+    //    }
+    //}
+    void OnTriggerEnter2D(Collider2D collision) {
+		Debug.Log(collision.transform.name);
+		if (collision.gameObject.CompareTag("Player")) {
+			Debug.Log(collision.transform.parent.name);
+            Transform player = collision.transform;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //numPickups += 1;
-        if (isRandomPickup) ammo = Random.Range(1, 6);
-        this.transform.GetChild(ammo).gameObject.SetActive(true);
-    }
+			while (player.name != "Tank") {
+                player = player.parent;
+            }
+            powerup.Apply(player.gameObject);
+			//collider.gameObject.transform.parent.Get0Component<TankControllerTest>().Pickup(ammo);
+			Destroy(gameObject);
+		}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void DestroyPickup()
-    {
-        //numPickups -= 1;
-        if (transform.parent) Destroy(transform.parent.gameObject);
-        else Destroy(gameObject);
-    }
+	}
 }

@@ -26,7 +26,7 @@ public class DescriptionDisplayScript : MonoBehaviour
         if (currentTank != tankSelector)
         {
             currentTank = tankSelector;
-            displayImage(currentTank);
+            //displayImage(currentTank);
         }
     }
 

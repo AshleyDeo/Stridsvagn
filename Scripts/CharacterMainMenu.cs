@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterMainMenu : MonoBehaviour
 {
+    [SerializeField] private TMP_Text lockText;
+    //uncheanged
     private int gameMode;
     public int tankSelector = 0;
     private int currentTank;
@@ -18,11 +21,19 @@ public class CharacterMainMenu : MonoBehaviour
     public int[] noLivesLostCampaign = { 1, 1, 1, 1, 1, 1, 1, 0 };
     public int killsCampaign;
     private int deathlessRun;
+	/*
+     --TANKS--
+    0 - Strid
+    1 - Whispering Death
+    2 - Muzak Standard
+    3 - Muzak Turbine V1
+    4 - Muzak Turbine V2
+    5 - Muzak Modern V1
+    6 - Muzak Modern V2
+    7 - Muzak Advanced
+     */
 
-    public Text lockText;
-
-
-    void Start()
+	void Start()
     {
         if (!PlayerPrefs.HasKey("gameMode"))
         {

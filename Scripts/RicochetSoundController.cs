@@ -6,7 +6,6 @@ using UnityEngine;
 public class RicochetSoundController : MonoBehaviour {
 
     public AudioClip expsound;
-
     private AudioSource audio;
 
     private void Start()

@@ -27,7 +27,8 @@ Transform:
   m_GameObject: {fileID: 5563961379789376186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3036372365627535252}
   - {fileID: 780655833065628832}
@@ -48,7 +49,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000023841858, y: -0.0032653809}
+  m_Offset: {x: 0.15, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -59,7 +60,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8359542, y: 0.7452946}
+  m_Size: {x: 2.35, y: 0.7452946}
   m_EdgeRadius: 0
 --- !u!114 &6512134978146015319
 MonoBehaviour:
@@ -100,6 +101,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.503, y: 0, z: 0}
   m_LocalScale: {x: 0.155, y: 0.1901747, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4482659047681601879}
   m_RootOrder: 0
@@ -153,7 +155,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &7716158871715381237
@@ -183,6 +185,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.47, y: 0, z: 0}
   m_LocalScale: {x: 0.155, y: 0.1901747, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4482659047681601879}
   m_RootOrder: 1
@@ -236,7 +239,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &6283982002898670796
@@ -252,15 +255,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2337.7532
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalPosition.x

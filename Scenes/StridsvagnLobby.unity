@@ -152,6 +152,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1254316010}
   m_Father: {fileID: 1848094116}
@@ -206,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698002439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbyControl, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -287,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d49b7c1bcd2e07499844da127be038d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_ForceModuleActive: 0
 --- !u!114 &388206763
 MonoBehaviour:
@@ -300,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -332,9 +335,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391266415
 GameObject:
@@ -364,6 +368,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848094116}
   m_RootOrder: 2
@@ -440,6 +445,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1711791894}
   m_Father: {fileID: 1848094116}
@@ -494,7 +500,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698002439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbyControl, Assembly-CSharp
         m_MethodName: PlayerIsReady
         m_Mode: 1
@@ -646,6 +652,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848094116}
   m_RootOrder: 1
@@ -655,17 +662,6 @@ RectTransform:
   m_AnchoredPosition: {x: -208.49, y: 28.884}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &698002439 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6265095866721967464, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-  m_PrefabInstance: {fileID: 6265095866292482415}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc9ebc30aa9f3943b1d6fb5f1ab5132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &792482799
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +690,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1404712730}
   m_RootOrder: 0
@@ -773,6 +770,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848094116}
   m_RootOrder: 0
@@ -852,6 +850,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848094116}
   m_RootOrder: 9
@@ -931,6 +930,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1755182385}
   m_RootOrder: 0
@@ -1013,6 +1013,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1818492141}
   m_Father: {fileID: 1848094116}
@@ -1067,7 +1068,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698002439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbyControl, Assembly-CSharp
         m_MethodName: PlayerUnready
         m_Mode: 1
@@ -1181,6 +1182,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 269566934}
   m_RootOrder: 0
@@ -1261,6 +1263,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 792482800}
   m_Father: {fileID: 1848094116}
@@ -1381,6 +1384,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 604336996}
   m_RootOrder: 0
@@ -1461,6 +1465,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 996323363}
   m_Father: {fileID: 1848094116}
@@ -1515,7 +1520,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698002439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbyControl, Assembly-CSharp
         m_MethodName: PlayerUnready
         m_Mode: 1
@@ -1527,7 +1532,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 698002439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbyControl, Assembly-CSharp
         m_MethodName: ReturnToMenu
         m_Mode: 1
@@ -1606,6 +1611,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2134743697}
   m_Father: {fileID: 1848094116}
@@ -1726,6 +1732,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1161979058}
   m_RootOrder: 0
@@ -1805,6 +1812,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 832325528}
   - {fileID: 648686429}
@@ -1820,7 +1828,7 @@ RectTransform:
   - {fileID: 2112361891}
   - {fileID: 1755182385}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1893,6 +1901,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848094116}
   m_RootOrder: 3
@@ -1968,6 +1977,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848094116}
   m_RootOrder: 4
@@ -2094,6 +2104,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2126,6 +2137,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848094116}
   m_RootOrder: 11
@@ -2205,6 +2217,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1777071771}
   m_RootOrder: 0
@@ -2256,84 +2269,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134743696}
   m_CullTransparentMesh: 1
---- !u!1001 &6265095866292482415
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6265095866721967462, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 494672019
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967464, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: LobbyText
-      value: 
-      objectReference: {fileID: 888252281}
-    - target: {fileID: 6265095866721967464, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: startButton
-      value: 
-      objectReference: {fileID: 269566933}
-    - target: {fileID: 6265095866721967464, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: ControlsText
-      value: 
-      objectReference: {fileID: 2112361892}
-    - target: {fileID: 6265095866721967464, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_InGameSceneName
-      value: Pitch
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967464, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_MinimumPlayerCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 315
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 282.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967465, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265095866721967466, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}
-      propertyPath: m_Name
-      value: LobbyMenuControl
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8825cdb8ab3b2214c8243e893c7165b9, type: 3}

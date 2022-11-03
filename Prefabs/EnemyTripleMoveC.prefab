@@ -806,7 +806,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!82 &1475709003168476424
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1360,7 +1360,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1475709004816743648}
-  - component: {fileID: 1475709004816743655}
   - component: {fileID: 1475709004816743654}
   - component: {fileID: 1475709004816743649}
   m_Layer: 8
@@ -1388,27 +1387,6 @@ Transform:
   m_Father: {fileID: 1475709003168476431}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1475709004816743655
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475709004816743651}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!82 &1475709004816743654
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1517,6 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6891737750f583944bc42dea473fbf21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: {fileID: 0}
   shot: {fileID: 7421187996609080961, guid: b1391014cbcb17d418d4eb298c1cf377, type: 3}
   player: {fileID: 0}
   shotSpawn: {fileID: 1475709003290482118}

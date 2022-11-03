@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e082f7fe8d6ef54a8d0152fb44869d0, type: 3}
+  m_Name: Whispering Death
+  m_EditorClassIdentifier: 
+  Hull: {fileID: 8712303040469675206, guid: a501cb4a3b145fe4a84a4a2aa6194f89, type: 3}
+  Turret: {fileID: 3342568179839800226, guid: e7f20c43e9c4c2e4c837cc5b1811949e, type: 3}
+  Husk: {fileID: 0}
+  officialName: 
+  codename: 
+  flavor: Now I am become death, the destroyer of worlds.
+  bonus: 
+  maxHealth: 10
+  detectDist: 10
+  fireRate: 0.5
+  moveSpeed: 3
+  turnSpeed: 50
+  turretRotSpeed: 50
+  howToUnlock: Zero Deaths
+  kills: 0
+  campaign: 0
+  zeroDeaths: 1
+  bodyPosition: {x: 0, y: 0, z: 0}
+  bodyAngle: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
+  turretPosition: {x: 0, y: 0, z: -0.241}
+  turretAngle: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}

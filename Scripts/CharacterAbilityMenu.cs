@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CharacterAbilityMenu : MonoBehaviour
 {
 
-    CharacterMainMenu menu;
+    [SerializeField] CharacterMainMenu menu;
     public int[] tankLocks = new int[8];
     private int[] tankUnlockThreshold = { 0, 10, 20, 30, 40, 50, 70, 80 };
     private int tankSelector;
@@ -18,7 +18,6 @@ public class CharacterAbilityMenu : MonoBehaviour
 
     void Start()
     {
-        menu = GameObject.Find("CharacterMainMenu").GetComponent<CharacterMainMenu>();
         tankLocks = menu.tankLocks;
         if (!PlayerPrefs.HasKey("tankLocks"))
         {

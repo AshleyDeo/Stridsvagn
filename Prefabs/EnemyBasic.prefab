@@ -1342,6 +1342,7 @@ GameObject:
   - component: {fileID: 4642896467251090894}
   - component: {fileID: 5586421560448962815}
   - component: {fileID: 8555281695887666770}
+  - component: {fileID: -5180597005988814194}
   m_Layer: 8
   m_Name: EnemyBasic
   m_TagString: Untagged
@@ -1388,7 +1389,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!82 &4642896467251090894
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1518,6 +1519,21 @@ MonoBehaviour:
   isActive: 0
   shieldUptime: 5
   shieldDowntime: 5
+--- !u!114 &-5180597005988814194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642896467251090883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3423174564ab60428bd872cb28cd9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 0
+  num: 0
 --- !u!1 &4650726934429489358
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6891737750f583944bc42dea473fbf21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: {fileID: 0}
   shot: {fileID: 7421187996609080961, guid: b1391014cbcb17d418d4eb298c1cf377, type: 3}
   player: {fileID: 0}
   shotSpawn: {fileID: 4642896466784973004}

@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7635467051646299534}
   m_RootOrder: 0
@@ -108,6 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 1
   light: {fileID: 3087837829415488160}
+  alwaysOn: 0
+  canBeRandom: 0
 --- !u!1 &7635467051646299535
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +138,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7605519257369360039}
   m_Father: {fileID: 7635467052377565031}
@@ -220,6 +224,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 76054868646403508}
   - {fileID: 7635467051646299534}
@@ -254,6 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa18c4e590d1c8f4ca8556c9612d0015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  owner: {fileID: 0}
+  Explosion: {fileID: 3192348663383216902, guid: 8f2de10d0fbe96349beb00877b2734e0, type: 3}
 --- !u!1001 &469653082459273823
 PrefabInstance:
   m_ObjectHideFlags: 0

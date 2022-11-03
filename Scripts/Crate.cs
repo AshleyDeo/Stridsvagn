@@ -1,47 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Crate : MonoBehaviour
-{
-    public int HP;
-    private float initialHP;
+public class Crate : MonoBehaviour, IDestructible {
+    private Health Health;
+    [SerializeField] private int healthPoints;
+    [SerializeField] private GameObject broken;
+    [SerializeField] private GameObject[] pickups;
+    [SerializeField] private PowerupEffect[] powerups;
     public GameObject explosion;
 
     public static int numCrates = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        initialHP = HP;
+    void Awake() {
+		Health = gameObject.AddComponent<Health>();
+        Health.SetHP(healthPoints);
         numCrates += 1;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("EnemyBullet"))
-        {
-            Destroy(collision.gameObject);
-
-            if (HP > 1) HP--;
-            else
-            {
-                numCrates -= 1;
-                HP = 0;
-                GameObject exp = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
-                exp.transform.parent = null;
-
-                Destroy(GetComponent<BoxCollider2D>());
-
-                this.transform.GetChild(0).gameObject.SetActive(false);
-                this.transform.GetChild(1).gameObject.SetActive(true);
-            }
+	public void Damage(int damage) {
+		Health.DecreaseHP(damage);
+        if (Health.HP <= 0) {
+           // HP.OnDead += OnDead;
+           OnDead();
+           Destroy(gameObject);
         }
-    }
+		//Debug.Log(HP.health);
+	}
+	//void OnDead(object sender, System.EventArgs e) {
+	void OnDead() {
+        numCrates -= 1;
+        Debug.Log("Pickup instantiated");
+        int chosen = Random.Range(0, powerups.Length);
+        GameObject broke = Instantiate(broken, transform.position, broken.transform.rotation) as GameObject;
+        broke.GetComponent<Pickup>().powerup = powerups[chosen];
+        GameObject pickup = Instantiate(powerups[chosen].Drop, transform.position, transform.rotation) as GameObject;
+        pickup.transform.parent = broke.transform;
+        //GameObject pickup = Instantiate(pickups[chosen], transform.position, transform.rotation) as GameObject;
+        //pickup.transform.parent = broke.transform;
+        broke.transform.Rotate(180f, 0f, 0f);
+	}
 }

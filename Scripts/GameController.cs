@@ -143,39 +143,39 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
         }
 
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseGame();
         }
 
-        if (Input.GetKeyDown("0"))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
 
-        if (Input.GetKeyDown("1"))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene(3, LoadSceneMode.Single);
         }
 
-        if (Input.GetKeyDown("2"))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SceneManager.LoadScene(4, LoadSceneMode.Single);
         }
 
-        if (Input.GetKeyDown("3"))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SceneManager.LoadScene(5, LoadSceneMode.Single);
         }
 
-        if (Input.GetKeyDown("4"))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SceneManager.LoadScene(6, LoadSceneMode.Single);
         }
 
         if (Crate.numCrates <= cratesToSpawn)
         {
-            Vector2 pos = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
+            Vector2 pos = new(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
             targetSpawn.position = pos;
             var hits = Physics2D.OverlapCircleAll(pos, 2.0f, 31 << 6);
             while (hits.Length > 0)
@@ -198,7 +198,7 @@ public class GameController : MonoBehaviour
                 for (int y = (int)yMinWalls; y <= (int)yMaxWalls; y++)
                 {
                     decider = Random.Range(0, 10);
-                    Vector2 pos = new Vector2(x, y);
+                    Vector2 pos = new(x, y);
                     if (decider >= 9)
                     {
                         decider = Random.Range(0, 2);
@@ -216,7 +216,7 @@ public class GameController : MonoBehaviour
                 decider = Random.Range(0, 10);
 
                 // Defines the min and max ranges for x and y
-                Vector2 pos = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
+                Vector2 pos = new(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
                 targetSpawn.position = pos;
                 var hits = Physics2D.OverlapCircleAll(pos, 2.0f, 31 << 6);
                 while (hits.Length > 0)
@@ -273,7 +273,7 @@ public class GameController : MonoBehaviour
             gameText.text = "Your side was destroyed.\r\n Press space to play again";
         */
 
-        gameText.text = "";
+        //gameText.text = "";
 
         enemiesLeftText.text = "Enemies: " + enemyCount.ToString() + "\r\n" +
                                "Allies: " + allyCount.ToString();

@@ -21,9 +21,8 @@ public class TankController : MonoBehaviour
     private int tankSelector;
 
     public Text ammoText;
-    public int HP;
-    private int enemyCount;
     public int livesRemaining;
+    public int HP;
     private bool isDead;
 
     [SerializeField]
@@ -51,6 +50,7 @@ public class TankController : MonoBehaviour
     private float initialHP;
     public int ammoType;
     private int ammoCountdown;
+    private int enemyCount;
 
     private float lts;
     private float rts;
@@ -315,13 +315,13 @@ public class TankController : MonoBehaviour
                     break;
             }
             //Destroy(collision.gameObject, 0.25f);
-            pickup.DestroyPickup();
+            //pickup.DestroyPickup();
         }
 
         if (this.gameObject.CompareTag("Tank") && (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Mine")))
         {
             int overfly = Random.Range(0, 9);
-            if (tankSelector == 6 && overfly >= 5) ;
+            if (tankSelector == 6 && overfly >= 5) {  }
             else
             {
                 GameObject ric = Instantiate(ricochet, collision.transform, false) as GameObject;

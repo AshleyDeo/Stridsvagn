@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
-public class EnemyController : MonoBehaviour {
+public class EnemyController : MonoBehaviour, IDestructible {
 
-    public GameObject shot;
+	[SerializeField] private Health Health = null;
+	public GameObject shot;
     public GameObject player;
     public Transform shotSpawn;
     public AudioClip shotSoundClose;
@@ -25,29 +26,29 @@ public class EnemyController : MonoBehaviour {
 
     private Animator muzzleAnimator;
 
-    private void Start()
-    {
-        fireRate = Random.Range(2.5f, 5.0f);
+	void Awake() {
+		Health = gameObject.AddComponent<Health>();
+		Health.SetHP(20);
+	}
+	private void Start() {
+        fireRate = Random.Range(2.5f, 5f);
         rb2D = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Tank");
         audio = GetComponent<AudioSource>();
         InvokeRepeating("Shoot", fireRate, fireRate);
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
         canFire = false;
-        if (!PlayerPrefs.HasKey("detectDistance"))
-        {
-            PlayerPrefs.SetFloat("detectDistance", 14.0f);
+        if (!PlayerPrefs.HasKey("detectDistance")) {
+            PlayerPrefs.SetFloat("detectDistance", 14f);
         }
-        else
-        {
+        else {
             maxDetectionDistance = PlayerPrefs.GetFloat("detectDistance");
         }
         muzzleAnimator = this.transform.GetChild(2).GetChild(0).GetComponent<Animator>();
         GameController.enemyCount++;
     }
 
-    private void Update()
-    {
+    private void Update() {
         //Mouse Position in the world. It's important to give it some distance from the camera. 
         //If the screen point is calculated right from the exact position of the camera, then it will
         //just return the exact same position as the camera, which is no good.
@@ -64,28 +65,23 @@ public class EnemyController : MonoBehaviour {
 
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
     }
-
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         spread = Random.Range(-GameController.enemyCount - 3.0f, GameController.enemyCount + 3.0f);
         shotSpawn.localRotation = Quaternion.Euler(0, 0, spread);
 
         RaycastHit2D[] detection = Physics2D.CircleCastAll(transform.position, maxDetectionDistance, transform.forward, 0.0f, 1 << 6);
         float closestDistanceSqr = Mathf.Infinity;
 
-        foreach (RaycastHit2D blip in detection)
-        {
+        foreach (RaycastHit2D blip in detection) {
             Vector2 directionToTarget = blip.transform.position - transform.position;
             float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
-            {
+            if (dSqrToTarget < closestDistanceSqr) {
                 closestDistanceSqr = dSqrToTarget;
                 bogey = blip;
             }
         }
 
-        if (bogey)
-        {
+        if (bogey) {
             float angle = AngleBetweenPoints(rb2D.position, bogey.transform.position);
             Vector2 directionToBogey = bogey.transform.position - transform.position;
             float dSqrToBogey = directionToBogey.sqrMagnitude;
@@ -93,34 +89,25 @@ public class EnemyController : MonoBehaviour {
         }
         else transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-        RaycastHit2D sight = Physics2D.Raycast(shotSpawn.position, transform.up, maxDetectionDistance -1.0f, 9 << 6);
-        if (sight.collider != null && sight.collider.tag == "Tank") canFire = true;
+        RaycastHit2D sight = Physics2D.Raycast(shotSpawn.position, transform.up, maxDetectionDistance - 1.0f, 9 << 6);
+        if (sight.collider != null && sight.collider.CompareTag("Tank")) canFire = true;
         else canFire = false;
     }
 
-    private float AngleBetweenPoints(Vector2 a, Vector2 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
-    }
-
-    private void Shoot()
-    {
-        if (canFire)
-        {
-            if (distanceToPlayer <= maxDetectionDistance / 2.0f)
-            {
+    private float AngleBetweenPoints(Vector2 a, Vector2 b) => Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    private void Shoot() {
+        if (canFire) {
+            if (distanceToPlayer <= maxDetectionDistance / 2.0f) {
                 audio.PlayOneShot(shotSoundClose, 1.0f);
             }
-            else
-            {
+            else {
                 audio.PlayOneShot(shotSoundFar, 1.0f);
             }
 
             GameObject shell = Instantiate(shot, shotSpawn.transform, false) as GameObject;
             shell.transform.parent = null;
 
-            if (isTripleShot)
-            {
+            if (isTripleShot) {
                 GameObject shell2 = Instantiate(shot, shotSpawn.transform, false) as GameObject;
                 GameObject shell3 = Instantiate(shot, shotSpawn.transform, false) as GameObject;
                 shell2.transform.localRotation = Quaternion.Euler(0f, 0f, 10f);
@@ -130,5 +117,14 @@ public class EnemyController : MonoBehaviour {
             }
             muzzleAnimator.SetTrigger("Fire");
         }
-    }
+	}
+	public void Damage(int damage) {
+		Health.DecreaseHP(damage);
+		//if (Health.HP <= 0) {
+		//	// HP.OnDead += OnDead;
+		//	OnDead();
+		//	Destroy(gameObject);
+		//}
+		//Debug.Log(HP.health);
+	}
 }

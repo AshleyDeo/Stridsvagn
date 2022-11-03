@@ -3741,6 +3741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6891737750f583944bc42dea473fbf21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: {fileID: 0}
   shot: {fileID: 7421187996609080961, guid: b1391014cbcb17d418d4eb298c1cf377, type: 3}
   player: {fileID: 0}
   shotSpawn: {fileID: 5043680893635882670}
@@ -3866,6 +3867,7 @@ GameObject:
   - component: {fileID: 5043680893221017184}
   - component: {fileID: 5043680893221017186}
   - component: {fileID: 2834748940417599104}
+  - component: {fileID: 3996920851077889081}
   m_Layer: 8
   m_Name: EnemyTripleMoveSL
   m_TagString: Untagged
@@ -3912,7 +3914,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!82 &5043680893221017184
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4042,6 +4044,21 @@ MonoBehaviour:
   isActive: 0
   shieldUptime: 5
   shieldDowntime: 5
+--- !u!114 &3996920851077889081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043680893221017213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3423174564ab60428bd872cb28cd9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 0
+  num: 0
 --- !u!1 &5043680893263559894
 GameObject:
   m_ObjectHideFlags: 0

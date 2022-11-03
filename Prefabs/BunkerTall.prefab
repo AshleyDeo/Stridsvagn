@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.6673, z: 0}
   m_LocalScale: {x: 0.21, y: 0.26129293, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5137659346353741136}
   m_RootOrder: 1
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &7604627509299680529
@@ -111,6 +112,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1735345220127436805}
   - {fileID: 5766804209629582010}
@@ -131,7 +133,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.012215018}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -142,7 +144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.5405476}
+  m_Size: {x: 1.05, y: 2.6}
   m_EdgeRadius: 0
 --- !u!114 &541311796271539784
 MonoBehaviour:
@@ -183,6 +185,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0.6881, z: 0}
   m_LocalScale: {x: 0.21, y: 0.2696598, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5137659346353741136}
   m_RootOrder: 0
@@ -236,7 +239,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &8391094295013798667
@@ -252,15 +255,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2750
+      value: 1.375
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3275.6536
+      value: 1.637827
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67a2ad7b31f89f2429656e0ba1def87b, type: 3}
       propertyPath: m_LocalPosition.x

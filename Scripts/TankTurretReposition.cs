@@ -10,16 +10,14 @@ public class TankTurretReposition : MonoBehaviour
 
     public TankTurretController turret;
 
-    // Start is called before the first frame update
-    void OnEnable()
-    {
-        turret = GameObject.Find("TankTurret").GetComponent<TankTurretController>();
-        turret.positionX = positionX;
-        turret.positionY = positionY;
-        turret.canRotate = turretCanRotate;
-    }
+    //void OnEnable()
+    //{
+    //    turret = GameObject.Find("TankTurret").GetComponent<TankTurretController>();
+    //    turret.positionX = positionX;
+    //    turret.positionY = positionY;
+    //    turret.canRotate = turretCanRotate;
+    //}
 
-    // Update is called once per frame
     void Update()
     {
 
