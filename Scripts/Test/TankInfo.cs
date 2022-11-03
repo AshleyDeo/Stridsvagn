@@ -1,6 +1,6 @@
 using UnityEngine;
 
 public class TankInfo : MonoBehaviour {
-	public Transform firePoint = null;
+	public bool firePoint;
 	public bool canRotate;
 }

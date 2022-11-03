@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameControllerTest : MonoBehaviour {
     public static GameControllerTest Instance { get; private set; }
 	public Transform player;
-    public static int enemyCount;
-    public static int allyCount;
+    public static int enemyCount = 0;
+    public static int allyCount = 0;
 
     //unchenged
     private Scene currentScene;
-    private int gameMode;
 
     public GameObject enemy;
     public GameObject enemyMoveStraightLine;
@@ -52,11 +52,14 @@ public class GameControllerTest : MonoBehaviour {
     public GameObject pauseMenu;
     private bool canPause;
     public GameObject gameOverMenu;
-    private bool hasGameStarted = false;
-    public int[] campaignThresholds = { 1, 1, 1, 1, 1, 1, 0, 0 };
-    public int[] noLivesLostCampaign = { 1, 1, 1, 1, 1, 1, 1, 0 };
-    private int deathlessRun;
+    public TMP_Text gameOverText;
 
+    void OnEnable() {
+        PlayerTank.OnPlayerDead += ActivateGameOverMenu;
+    }
+    void OnDisable() {
+        PlayerTank.OnPlayerDead -= ActivateGameOverMenu;
+    }
     private void Awake() {
 		if (Instance != null && Instance != this) {
 			Destroy(this);
@@ -64,31 +67,6 @@ public class GameControllerTest : MonoBehaviour {
 		else {
 			Instance = this;
 		}
-		if (!PlayerPrefs.HasKey("gameMode")) {
-            PlayerPrefs.SetInt("gameMode", 3);
-        }
-        else {
-            gameMode = PlayerPrefs.GetInt("gameMode");
-        }
-        if (!PlayerPrefs.HasKey("campaignThresholds")) {
-            PlayerPrefsX.SetIntArray("campaignThresholds", campaignThresholds);
-        }
-        else {
-            campaignThresholds = PlayerPrefsX.GetIntArray("campaignThresholds");
-        }
-        if (!PlayerPrefs.HasKey("deathlessRun")) {
-            PlayerPrefs.SetInt("deathlessRun", 1);
-        }
-        else {
-            deathlessRun = PlayerPrefs.GetInt("deathlessRun");
-        }
-
-        if (!PlayerPrefs.HasKey("noLivesLostCampaign")) {
-            PlayerPrefsX.SetIntArray("noLivesLostCampaign", noLivesLostCampaign);
-        }
-        else {
-            noLivesLostCampaign = PlayerPrefsX.GetIntArray("noLivesLostCampaign");
-        }
 
         currentScene = SceneManager.GetActiveScene();
         allyCount = 0;
@@ -104,34 +82,14 @@ public class GameControllerTest : MonoBehaviour {
         spawnPoint = new Vector3(xSpawn, ySpawn, zSpawn);
     }
     private void Start() {
-        if (SceneManager.GetActiveScene().buildIndex == 1) {
-            canPause = false;
-            hasGameStarted = false;
-        }
-        else {
-            canPause = true;
-            hasGameStarted = true;
-        }
+        canPause = SceneManager.GetActiveScene().buildIndex == 1;
     }
     private void Update() {
-        if ((allyCount > 0 && enemyCount <= 0) && hasGameStarted) {
-            Debug.Log("option1");
-            //Debug.Log("AllyCount = " + allyCount + ", EnemyCount = " + enemyCount);
-            activateGameOverMenu(2, gameMode);
-        }
-
-        //if (allyCount <= 0 && hasGameStarted)
-        //{
-        //    //Debug.Log("AllyCount = " + allyCount + ", EnemyCount = " + enemyCount);
-        //    Debug.Log("option2");
-        //    activateGameOverMenu(1, gameMode);
-        //}
-
         if (Input.GetKeyDown(KeyCode.Space)) {
             SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
         }
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            pauseGame();
+            PauseGame();
         }
         if (Input.GetKeyDown(KeyCode.Alpha0)) {
             SceneManager.LoadScene(2, LoadSceneMode.Single);
@@ -145,7 +103,6 @@ public class GameControllerTest : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
             SceneManager.LoadScene(5, LoadSceneMode.Single);
         }
-
         if (Input.GetKeyDown(KeyCode.Alpha4)) {
             SceneManager.LoadScene(6, LoadSceneMode.Single);
         }
@@ -226,44 +183,33 @@ public class GameControllerTest : MonoBehaviour {
     }
     public int CountEnemies() => enemyCount;
     public int CountAllies() => allyCount;
-    public void pauseGame() {
-        if (canPause) {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0.0f;
-        }
+    public void PauseGame() {
+        if (!canPause) return;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
     }
-    public void unpauseGame() {
-        Time.timeScale = 1.0f;
-    }
-    public void activateGameOverMenu(int outcome, int levelButton) {
+    public void UnpauseGame() => Time.timeScale = 1.0f;
+    public void ActivateGameOverMenu(bool isDead) {
         Time.timeScale = 0.0f;
         canPause = false;
         gameOverMenu.SetActive(true);
-        if (gameMode != 4 || (gameMode == 4 && outcome == 2 && SceneManager.GetActiveScene().buildIndex != 7)) {
-            gameOverMenu.transform.GetChild(levelButton).gameObject.SetActive(true);
-        }
-        if (gameMode == 4 && outcome == 2 && SceneManager.GetActiveScene().buildIndex == 7) {
-            for (int i = 0; i < campaignThresholds.Length; i++) {
-                campaignThresholds[i] = 1;
-            }
-            PlayerPrefsX.SetIntArray("campaignThresholds", campaignThresholds);
-            if (deathlessRun == 1) {
-                for (int i = 0; i < noLivesLostCampaign.Length; i++) {
-                    noLivesLostCampaign[i] = 1;
-                }
-                PlayerPrefsX.SetIntArray("noLivesLostCampaign", noLivesLostCampaign);
-            }
-        }
+        GameManager.Instance._currLives--;
+        if (isDead) {
+            gameOverText.text = "Defeated";
+			gameOverText.color = Color.red;
+		}
+        else {
+			gameOverText.text = "Victory";
+			gameOverText.color = Color.green;
+		}
     }
-    public void reloadScene() {
-        unpauseGame();
-        hasGameStarted = false;
+    public void ReloadScene() {
+        UnpauseGame();
         Crate.numCrates = 0;
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
     }
-    public void loadScene(int sceneNumber) {
-        unpauseGame();
-        hasGameStarted = false;
+    public void LoadScene(int sceneNumber) {
+        UnpauseGame();
         Crate.numCrates = 0;
         SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
     }

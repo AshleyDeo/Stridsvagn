@@ -20,6 +20,7 @@ MonoBehaviour:
   flavor: Now I am become death, the destroyer of worlds.
   bonus: 
   maxHealth: 10
+  originalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
   detectDist: 10
   fireRate: 0.5
   moveSpeed: 3
@@ -33,3 +34,5 @@ MonoBehaviour:
   bodyAngle: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
   turretPosition: {x: 0, y: 0, z: -0.241}
   turretAngle: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
+  UI_Hull: {fileID: 8712303040469675206, guid: cd1a78cf7aae11f4bbfdab43a3ff5e8f, type: 3}
+  UI_Turret: {fileID: 3342568179839800226, guid: f1b0f6fe55355c640a741905e90ddaf8, type: 3}

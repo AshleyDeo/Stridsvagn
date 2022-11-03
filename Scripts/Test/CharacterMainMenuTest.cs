@@ -1,24 +1,23 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
 public class CharacterMainMenuTest : MonoBehaviour {
-    [SerializeField] PlayerMenu player;
+    [SerializeField] TankBase player;
     //UI
     [SerializeField] TMP_Text tankName;
     [SerializeField] TMP_Text tankDesc;
     [SerializeField] TMP_Text tankBonus;
     [SerializeField] private TMP_Text lockText;
     [SerializeField] private TMP_Text confirmText;
+    [SerializeField] private Button confirmButton;
+	[SerializeField] private bool ignoreLocks = false;
 
     public TankType[] tanks;
     TankType tank;
     private int numTanks = 0;
-
-    //unchanged
     public int tankSelector = 0;
-    private int gameMode;
+
     /*
      --TANKS--
     0 - Strid
@@ -34,16 +33,11 @@ public class CharacterMainMenuTest : MonoBehaviour {
         numTanks = tanks.Length;
     }
     void Start() {
-        if (!PlayerPrefs.HasKey("gameMode")) {
-            PlayerPrefs.SetInt("gameMode", 3);
-        }
-        else {
-            gameMode = PlayerPrefs.GetInt("gameMode");
-        }
         UpdateText();
-        player.SelectTank();
-    }
+		player.SetTank(tanks[tankSelector]);
+	}
     private bool CheckLocks() {
+        if (ignoreLocks) return true;
         if (tank.campaign && !GameManager.Instance._campaign) {
             return false;
         }
@@ -62,18 +56,12 @@ public class CharacterMainMenuTest : MonoBehaviour {
         tankDesc.text = tank.flavor;
         tankBonus.text = tank.bonus;
         lockText.text = tank.howToUnlock;
-        if (CheckLocks()) {
-            confirmText.text = "Confirm";
-        }
-        else {
-            confirmText.text = "Locked";
-        }
+        confirmButton.enabled = CheckLocks();
+        confirmText.text = CheckLocks() ? "Confirm" : "Locked";
     }
     public void OnConfirmClick() {
-        if (confirmText.text == "Confirm") {
-            GameManager.Instance._tank = tanks[tankSelector];
-            SceneManager.LoadScene("Test", LoadSceneMode.Single);
-        }
+        if (confirmText.text != "Confirm") return;
+        GameManager.Instance._tank = tanks[tankSelector];
     }
     public void OnPrevClick() {
         tankSelector--;
@@ -81,25 +69,14 @@ public class CharacterMainMenuTest : MonoBehaviour {
             tankSelector = numTanks - 1;
         }
         UpdateText();
-        player.SelectTank();
+        player.SetTank(tanks[tankSelector]);
     }
     public void OnNextClick() {
         tankSelector = (tankSelector + 1) % numTanks;
         UpdateText();
-        player.SelectTank();
-    }
-    public void ExitToMenu() {
-        Crate.numCrates = 0;
-        SceneManager.LoadScene("MenuSP", LoadSceneMode.Single);
-    }
-    //Level Select
-    public void GoToLevelSelect() {
-        Crate.numCrates = 0;
-        if (gameMode == 3) SceneManager.LoadScene("LevelSelectSP", LoadSceneMode.Single);
-        if (gameMode == 4) { SceneManager.LoadScene("Main", LoadSceneMode.Single); }
-        if (gameMode == 5) SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
-    }
-    //Debug
+		player.SetTank(tanks[tankSelector]);
+	}
+    //DEBUG
     public void DebugReset() {
         GameManager.Instance._kills = 0;
         GameManager.Instance._deaths = int.MaxValue;

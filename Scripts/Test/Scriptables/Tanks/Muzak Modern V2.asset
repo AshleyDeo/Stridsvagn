@@ -20,6 +20,7 @@ MonoBehaviour:
   flavor: Now with blowout panels. Western technology isn't so bad after all.
   bonus: 
   maxHealth: 10
+  originalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
   detectDist: 14
   fireRate: 0.5
   moveSpeed: 3
@@ -33,3 +34,5 @@ MonoBehaviour:
   bodyAngle: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
   turretPosition: {x: 0, y: 0, z: 0}
   turretAngle: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
+  UI_Hull: {fileID: 6752052084286450431, guid: f5cbe7f2be48b274e822bd2a4a1729b0, type: 3}
+  UI_Turret: {fileID: 6776488728503330565, guid: 656ed22a4d35a7043ba764190b928f65, type: 3}

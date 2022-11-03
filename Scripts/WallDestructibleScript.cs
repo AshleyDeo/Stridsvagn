@@ -4,17 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WallDestructibleScript : MonoBehaviour, IDestructible {
-	//public int HP;
-	//private float initialHP;
 	[SerializeField] private Health Health = null;
 	[SerializeField] private int healthPoints;
 	[SerializeField] private GameObject explosion;
 	[SerializeField] private GameObject remains;
 
-	//[SerializeField]
-	//Texture Box;
-
-	// Start is called before the first frame update
 	void Start() {
 		if (Health == null) {
 			Health = gameObject.AddComponent<Health>();

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class EnemyMoveCircle : MonoBehaviour
-{
+public class EnemyMoveCircle : MonoBehaviour {
     private Rigidbody2D rb2D;
     public Transform bumper;
-    private GameController gameController;
+    private GameControllerTest gameController;
 
     public float speed;
     public bool canMove;
@@ -19,10 +19,9 @@ public class EnemyMoveCircle : MonoBehaviour
     public Vector2 rotationPoint;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb2D = GetComponent<Rigidbody2D>();
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerTest>();
         xMin = gameController.xMin;
         xMax = gameController.xMax;
         yMin = gameController.yMin;
@@ -32,39 +31,31 @@ public class EnemyMoveCircle : MonoBehaviour
         else direction = 180f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private void FixedUpdate() {
+        if (!canMove) return;
+        float angle = AngleBetweenPoints(rb2D.position, rotationPoint);
+        rb2D.rotation = angle + direction;
 
-    private void FixedUpdate()
-    {
-        if (canMove)
-        {
-            float angle = AngleBetweenPoints(rb2D.position, rotationPoint);
-            rb2D.rotation = angle + direction;
+        transform.Translate(speed * Time.deltaTime * transform.up, Space.World);
 
-            transform.Translate(transform.up * speed * Time.deltaTime, Space.World);
+        RaycastHit2D guard = Physics2D.CircleCast(bumper.position, 0.34f, transform.forward, 0.0f, 13 << 6);
 
-            //RaycastHit2D guard = Physics2D.BoxCast(bumper.position, new Vector2(0.6f, 0.6f), 0.0f, transform.forward, 0.0f, 13 << 6);
-            RaycastHit2D guard = Physics2D.CircleCast(bumper.position, 0.34f, transform.forward, 0.0f, 13 << 6);
-            
-            if (transform.position.x <= xMin ||
-                transform.position.x >= xMax ||
-                transform.position.y <= yMin ||
-                transform.position.y >= yMax ||
-                guard.collider != null)
-            {
-                transform.localRotation *= Quaternion.Euler(0, 0, 180);
-                if (direction == 0f) direction = 180f;
-                else direction = 0f;
-            }
+		if (transform.position.x <= xMin ||
+            transform.position.x >= xMax ||
+            transform.position.y <= yMin ||
+            transform.position.y >= yMax ||
+            guard.collider != null) {
+            transform.localRotation *= Quaternion.Euler(0, 0, 180);
+            if (direction == 0f) direction = 180f;
+            else direction = 0f;
         }
     }
 
-    private float AngleBetweenPoints(Vector2 a, Vector2 b)
-    {
+    private float AngleBetweenPoints(Vector2 a, Vector2 b) {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
+    void OnDrawGizmos() {
+        Gizmos.color = Color.cyan;
+		Gizmos.DrawSphere(bumper.position, 0.34f);
+	}
 }

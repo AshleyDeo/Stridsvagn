@@ -41,7 +41,6 @@ public class GameControllerMenu : MonoBehaviour {
     public int[] campaignThresholds = { 1, 1, 1, 1, 1, 1, 0, 0 };
     public int[] noLivesLostCampaign = { 1, 1, 1, 1, 1, 1, 1, 0 };
     private int deathlessRun;
-
     private void Awake() {
         if (!PlayerPrefs.HasKey("gameMode")) {
             PlayerPrefs.SetInt("gameMode", 3);

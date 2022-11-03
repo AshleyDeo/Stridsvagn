@@ -14,11 +14,46 @@ public class GameManager : MonoBehaviour, ISaveable {
 	public bool _campaign = false;
 	public int _currLives = 5;
 
+	public GameMode _mode = GameMode.Menu;
+	public int _nextScene = 0;
+	public bool _paused = false;
+
 	private void Awake() {
 		if (Instance != null && Instance != this) {
-			Destroy(this);
+			Destroy(gameObject);
 		}
-		else { Instance = this; }
+		Instance = this;
+		DontDestroyOnLoad(gameObject);
+	}
+	public void SetLives(int lives) => _currLives = lives;
+	public void SetTank(TankType tank) => _tank = tank;
+	public void SetGameMode(int mode) {
+		_mode = (GameMode) mode;
+		switch (_mode) {
+			case GameMode.Menu:
+				_nextScene = 0;
+				_currLives = 0;
+				break;
+			case GameMode.LevelSelect:
+				_nextScene = 5;
+				_currLives = 4;
+				break;
+			case GameMode.Campaign:
+				_nextScene = 5;
+				_currLives = 4;
+				break;
+			case GameMode.Freeplay:
+				_nextScene = 2;
+				_currLives = 4;
+				break;
+			case GameMode.Tutorial:
+				_nextScene = 8;
+				_currLives = 5;
+				break;
+			case GameMode.Continue:
+				//Load Game
+				break;
+		}
 	}
 	//public void Start() => ChangeState(GameState.Starting);
 	//public void ChangeState(GameState newState) {
@@ -76,7 +111,15 @@ public class GameManager : MonoBehaviour, ISaveable {
 		public int currLives;
 	}
 }
-[System.Serializable] 
+public enum GameMode {
+	Menu = 0,
+	Campaign = 1,
+	Freeplay = 2,
+	Tutorial = 3,
+	LevelSelect = 4,
+	Continue = 5
+}
+[System.Serializable]
 public enum GameState {
 	Starting = 0,
 	SpawningPlayer = 1,

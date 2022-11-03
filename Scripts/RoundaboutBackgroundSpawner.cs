@@ -12,7 +12,7 @@ public class RoundaboutBackgroundSpawner : MonoBehaviour
     public GameObject concreteTile1;
     public GameObject concreteTile2;
     public GameObject concreteTile3;
-    private GameController gameController;
+    private GameControllerTest gameController;
 
     public float xMin;
     public float xMax;
@@ -38,7 +38,7 @@ public class RoundaboutBackgroundSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerTest>();
         /*
         if (gameControllerLimits)
         {

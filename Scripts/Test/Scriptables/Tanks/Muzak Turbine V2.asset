@@ -20,6 +20,7 @@ MonoBehaviour:
   flavor: 
   bonus: 
   maxHealth: 15
+  originalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
   detectDist: 14
   fireRate: 0.5
   moveSpeed: 3
@@ -33,3 +34,5 @@ MonoBehaviour:
   bodyAngle: {x: 0.49999997, y: -0.49999997, z: 0.49999997, w: -0.49999997}
   turretPosition: {x: 0.04, y: 0, z: -0.356}
   turretAngle: {x: 0.70710677, y: -0.70710677, z: -0.00000003090862, w: 0.00000003090862}
+  UI_Hull: {fileID: 5762350497293168275, guid: 8a76eb1ff12133e4681f1b12b8a95071, type: 3}
+  UI_Turret: {fileID: 4261300345452630119, guid: 0d8165b3328f50f4db87405fcf4bbe7a, type: 3}

@@ -288,10 +288,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void unpauseGame()
-    {
-        Time.timeScale = 1.0f;
-    }
+    public void unpauseGame() => Time.timeScale = 1.0f;
 
     public void activateGameOverMenu(int outcome, int levelButton)
     {

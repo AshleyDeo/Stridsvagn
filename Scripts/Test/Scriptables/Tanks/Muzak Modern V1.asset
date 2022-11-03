@@ -20,6 +20,7 @@ MonoBehaviour:
   flavor: Better armor than the original, but still rather outdated.
   bonus: 
   maxHealth: 20
+  originalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
   detectDist: 14
   fireRate: 0.5
   moveSpeed: 3
@@ -33,3 +34,5 @@ MonoBehaviour:
   bodyAngle: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
   turretPosition: {x: 0, y: -0.151, z: 0}
   turretAngle: {x: 0, y: 0, z: 0, w: 0}
+  UI_Hull: {fileID: 4240076176761410085, guid: df9458912b683ad4faa14d121eb02d01, type: 3}
+  UI_Turret: {fileID: 841470269465873166, guid: bcf4c9cb5a06a0f449d279a74829db1a, type: 3}

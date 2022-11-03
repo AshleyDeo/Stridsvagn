@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shell
   m_EditorClassIdentifier: 
   Ammo: {fileID: 5648177141343726477, guid: 04823fd3154b0de4982650838fb76f32, type: 3}
-  audioClip: {fileID: 8300000, guid: 1be75941298bb3542927284801866bd0, type: 3}
+  audioClip: {fileID: 8300000, guid: 88b1d36b689ab6243a67ae8145cb35e9, type: 3}
   ammoName: Shell
   isDrop: 0
   speed: 10

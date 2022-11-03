@@ -13,7 +13,8 @@ public class TankType : ScriptableObject {
 	public string flavor;
 	public string bonus;
 	[Header("Stats")]
-	public int maxHealth;
+	public int maxHealth; 
+	public AmmoType originalAmmo;
 	public float detectDist;
 	public float fireRate;
 	public float moveSpeed;
@@ -29,4 +30,7 @@ public class TankType : ScriptableObject {
 	public Quaternion bodyAngle;
 	public Vector3 turretPosition;
 	public Quaternion turretAngle;
+	[Header("UI Visual")]
+	public GameObject UI_Hull;
+	public GameObject UI_Turret;
 }

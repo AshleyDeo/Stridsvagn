@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyDestroy : MonoBehaviour
-{
+public class EnemyDestroy : MonoBehaviour {
     private int gameMode;
     public int HP;
     private float initialHP;
@@ -16,49 +15,34 @@ public class EnemyDestroy : MonoBehaviour
     [SerializeField]
     Texture Box;
 
-    private void Start()
-    {
+    private void Start() {
         initialHP = (float)HP;
 
-        if (!PlayerPrefs.HasKey("gameMode"))
-        {
+        if (!PlayerPrefs.HasKey("gameMode")) {
             PlayerPrefs.SetInt("gameMode", 3);
         }
-        else
-        {
+        else {
             gameMode = PlayerPrefs.GetInt("gameMode");
         }
 
-        if (!PlayerPrefs.HasKey("killsCampaign"))
-        {
+        if (!PlayerPrefs.HasKey("killsCampaign")) {
             PlayerPrefs.SetInt("killsCampaign", 0);
         }
-        else
-        {
+        else {
             killsCampaign = PlayerPrefs.GetInt("killsCampaign");
         }
     }
-
-    private void Update()
-    {
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Mine"))
-        {
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Mine")) {
             Destroy(collision.gameObject);
 
-            if (HP > 1)
-            {
+            if (HP > 1) {
                 HP--;
                 GameObject ric = Instantiate(ricochet, collision.transform, false) as GameObject;
                 ric.transform.parent = null;
             }
-            else
-            {
-                if (gameMode == 4)
-                {
+            else {
+                if (gameMode == 4) {
                     killsCampaign += 1;
                     PlayerPrefs.SetInt("killsCampaign", killsCampaign);
                 }
@@ -71,9 +55,7 @@ public class EnemyDestroy : MonoBehaviour
             }
         }
     }
-
-    void OnGUI()
-    {
+    void OnGUI() {
         Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
 
         // draw health bar background

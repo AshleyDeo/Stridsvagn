@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tank: {fileID: 11400000, guid: 0d66f46629959d3418079b5b1f8cd4d5, type: 2}
+  spawnPoint: {fileID: 0}
   body: {fileID: 55080386875855741}
   turret: {fileID: 8560964876040627921}
   firePoint: {fileID: 0}
@@ -107,6 +108,7 @@ MonoBehaviour:
   shield: {fileID: 3579778080708406399}
   Ammo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
   explosion: {fileID: 388863977751337436, guid: a6ed92043ff05374f840bfc7c7e02fb1, type: 3}
+  UiVer: 0
 --- !u!114 &4242225062358787301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3718224660895137729}
   maxHealth: 0
-  num: 0
+  currentHP: 0
 --- !u!1 &5584082495618910896
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GauntletBackgroundSpawner : MonoBehaviour
 {
     public GameObject backgroundObject;
-    private GameController gameController;
+    private GameControllerTest gameController;
 
     public float x;
     public float xOffset;
@@ -17,7 +17,7 @@ public class GauntletBackgroundSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerTest>();
         if (gameControllerYMax) yMax = gameController.yMax;
 
         float i = yMin;

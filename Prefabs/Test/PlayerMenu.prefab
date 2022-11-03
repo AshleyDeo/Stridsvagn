@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2562057273828489608}
   - component: {fileID: 4319535769269792590}
   - component: {fileID: 4242225062358787301}
-  - component: {fileID: 4187466303740025485}
+  - component: {fileID: 1038751039151561477}
   m_Layer: 0
   m_Name: PlayerMenu
   m_TagString: Untagged
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tank: {fileID: 0}
+  spawnPoint: {fileID: 0}
   body: {fileID: 55080386875855741}
   turret: {fileID: 8560964876040627921}
   firePoint: {fileID: 0}
@@ -139,11 +140,8 @@ MonoBehaviour:
   shield: {fileID: 3579778080708406399}
   Ammo: {fileID: 0}
   explosion: {fileID: 388863977751337436, guid: a6ed92043ff05374f840bfc7c7e02fb1, type: 3}
+  UiVer: 0
   _menu: {fileID: 0}
-  bodyFP: {fileID: 6741249252544410876}
-  turretFP: {fileID: 8641711484977022438}
-  firePoints: []
-  originalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
 --- !u!114 &4242225062358787301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,8 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3718224660895137729}
   maxHealth: 0
-  num: 0
---- !u!114 &4187466303740025485
+  currentHP: 0
+--- !u!114 &1038751039151561477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,10 +166,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 3447672580759853275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a72bc35821f4047832a3e639995f3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4872554727157454112
 GameObject:
   m_ObjectHideFlags: 0

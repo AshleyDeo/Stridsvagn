@@ -5085,7 +5085,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -5218,5 +5218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f23bf5bca3b4a42bf829e56805deac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Impact: {fileID: 3192348663383216902, guid: 8f2de10d0fbe96349beb00877b2734e0, type: 3}
+  owner: {fileID: 0}
   damage: 1
+  Impact: {fileID: 3192348663383216902, guid: 8f2de10d0fbe96349beb00877b2734e0, type: 3}

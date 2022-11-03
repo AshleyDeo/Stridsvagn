@@ -8,13 +8,5 @@ public class Shield : PowerupEffect {
 			SoundManager.Instance.PlaySound(powerupSound);
 			collector.ActivateShield(5f);
 		}
-		TankControllerTest test = target.GetComponent<TankControllerTest>();
-		if (test != null) {
-			test.ActivateShield();
-		}
-		TankControllerMenu menu = target.GetComponent<TankControllerMenu>();
-		if (menu != null) {
-			menu.GetComponent<TankControllerMenu>().ActivateShield();
-		}
 	}
 }

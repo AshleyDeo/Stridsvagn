@@ -7,6 +7,7 @@ public class ProjectileAmmo : AmmoType {
 	public float speed;
 	private Vector3 destination;
     public override void Use(Transform loc) {
+		if(loc == null) return;
 		SoundManager.Instance.PlaySound(audioClip);
 		Ray ray = new(loc.position, loc.up);
 		if (Physics.Raycast(ray, out RaycastHit hit)) {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoundaboutWallSpawner : MonoBehaviour
 {
-    private GameController gameController;
+    private GameControllerTest gameController;
 
     public GameObject wall;
     public GameObject wallDestructible;
@@ -30,7 +30,7 @@ public class RoundaboutWallSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerTest>();
 
         xMin = gameController.xMin;
         xMax = gameController.xMax;

@@ -1,9 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class TankControllerTest : MonoBehaviour, IDestructible {
     public static TankControllerTest Instance { get; private set; }

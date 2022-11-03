@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7796239125942731597}
   - component: {fileID: 6970647359505178166}
   - component: {fileID: 6508953598787688057}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WoodenCrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   maxHealth: 0
-  num: 0
+  currentHP: 0
 --- !u!61 &6508953598787688057
 BoxCollider2D:
   m_ObjectHideFlags: 0

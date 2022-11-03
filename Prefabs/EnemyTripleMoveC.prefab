@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 1475709003168476424}
   - component: {fileID: 8562197958021316072}
   - component: {fileID: 1475709003168476438}
+  - component: {fileID: -1457078497975048835}
   m_Layer: 8
   m_Name: EnemyTripleMoveC
   m_TagString: Untagged
@@ -935,6 +936,21 @@ MonoBehaviour:
   speed: 1.25
   canMove: 1
   rotationPoint: {x: 0, y: 0}
+--- !u!114 &-1457078497975048835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475709003168476437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3423174564ab60428bd872cb28cd9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 0
+  currentHP: 0
 --- !u!1 &1475709003174037438
 GameObject:
   m_ObjectHideFlags: 0

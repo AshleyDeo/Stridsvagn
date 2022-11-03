@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldController : MonoBehaviour
-{
+public class ShieldController : MonoBehaviour {
     public bool isRandom;
     public int isActive;
     public float shieldUptime;
@@ -12,8 +11,7 @@ public class ShieldController : MonoBehaviour
     private WaitForSeconds shieldInactive;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         shieldActive = new WaitForSeconds(shieldUptime);
         shieldInactive = new WaitForSeconds(shieldDowntime);
         if (isRandom) isActive = Random.Range(0, 2);
@@ -22,15 +20,12 @@ public class ShieldController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
-    IEnumerator cycleShield()
-    {
-        while (true)
-        {
+    IEnumerator cycleShield() {
+        while (true) {
             this.transform.GetChild(3).gameObject.SetActive(true);
             yield return shieldActive;
             this.transform.GetChild(3).gameObject.SetActive(false);
