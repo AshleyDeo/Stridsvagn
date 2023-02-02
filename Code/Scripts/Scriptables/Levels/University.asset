@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75458a8a55ac474db3c1eb19988fc1c, type: 3}
+  m_Name: University
+  m_EditorClassIdentifier: 
+  LevelName: University
+  NextScene: {fileID: 11400000, guid: b7f5aac456da2164da8db8509ac166fc, type: 2}
+  Campaign: 0
+  Music: {fileID: 8300000, guid: a67daab00aa884e4493cf6a48442ee0d, type: 3}
+  Lives: 5
+  Buildings:
+  - {fileID: 3003073464945155787, guid: c1a79bd91a8fdf5409f1c38fe2926014, type: 3}
+  - {fileID: 467140616686029070, guid: f8453d9aecd37fe4296601af9532695d, type: 3}
+  - {fileID: 2862205922489148617, guid: 8c16f28035289604bb6991be2b6dfac2, type: 3}
+  - {fileID: 8372569986536082474, guid: 6bf0feaa31cab444183543698bb76d19, type: 3}
+  - {fileID: 8702338414114818800, guid: 57168316edf726a42833d0beefc95d46, type: 3}
+  EnemyTypes:
+  - {fileID: 11400000, guid: e19f96a67e3fdeb4ba65766acd2d4bae, type: 2}
+  - {fileID: 11400000, guid: 0d66f46629959d3418079b5b1f8cd4d5, type: 2}
+  NumCrates: 3
+  NumEnemies: 5
+  NumAllies: 0
+  MinLocation: {x: -10, y: -10}
+  MaxLocation: {x: 10, y: 10}

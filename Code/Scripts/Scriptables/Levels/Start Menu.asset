@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75458a8a55ac474db3c1eb19988fc1c, type: 3}
+  m_Name: Start Menu
+  m_EditorClassIdentifier: 
+  LevelName: Test
+  NextScene: {fileID: 0}
+  Campaign: 0
+  Music: {fileID: 0}
+  Lives: 5
+  Buildings: []
+  EnemyTypes: []
+  NumCrates: 2
+  NumEnemies: 0
+  NumAllies: 0
+  MinLocation: {x: -10, y: -10}
+  MaxLocation: {x: 10, y: 10}

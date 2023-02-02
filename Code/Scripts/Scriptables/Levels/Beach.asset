@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75458a8a55ac474db3c1eb19988fc1c, type: 3}
+  m_Name: Beach
+  m_EditorClassIdentifier: 
+  LevelName: Beach Landing
+  NextScene: {fileID: 11400000, guid: e78d06e770f828d43abaedfed4adac7f, type: 2}
+  Campaign: 1
+  Music: {fileID: 8300000, guid: a67daab00aa884e4493cf6a48442ee0d, type: 3}
+  Lives: 5
+  Buildings: []
+  EnemyTypes:
+  - {fileID: 11400000, guid: e19f96a67e3fdeb4ba65766acd2d4bae, type: 2}
+  NumCrates: 3
+  NumEnemies: 4
+  NumAllies: 0
+  MinLocation: {x: -10, y: -10}
+  MaxLocation: {x: 10, y: 10}

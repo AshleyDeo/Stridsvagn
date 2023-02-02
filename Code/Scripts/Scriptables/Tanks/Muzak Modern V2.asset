@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e082f7fe8d6ef54a8d0152fb44869d0, type: 3}
+  m_Name: Muzak Modern V2
+  m_EditorClassIdentifier: 
+  Hull: {fileID: 3683089548044591440, guid: c65688a8d73b88b4db77b1399de610a6, type: 3}
+  Turret: {fileID: 6776488728503330565, guid: e30bb774857d4754fa267ab738d2b01d, type: 3}
+  Husk: {fileID: 0}
+  OfficialName: 
+  Codename: 
+  Flavor: 
+  Bonus: 
+  MaxHealth: 50
+  OriginalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
+  DetectDist: 5
+  FireRate: 3
+  MoveSpeed: 2
+  TurnSpeed: 15
+  TurretRotSpeed: 15
+  HowToUnlock: 
+  Kills: 0
+  Campaign: 0
+  ZeroDeaths: 0
+  UI_Hull: {fileID: 6752052084286450431, guid: f5cbe7f2be48b274e822bd2a4a1729b0, type: 3}
+  UI_Turret: {fileID: 6776488728503330565, guid: 656ed22a4d35a7043ba764190b928f65,
+    type: 3}
+  BodyPosition: {x: 0, y: 0, z: 0}
+  BodyAngle: {x: 0, y: 0, z: 0, w: 0}
+  TurretPosition: {x: 0, y: 0, z: 0}
+  TurretAngle: {x: 0, y: 0, z: 0, w: 0}
