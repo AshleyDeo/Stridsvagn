@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b5758b555a70648a943e2c86b2b267, type: 3}
+  m_Name: Mine
+  m_EditorClassIdentifier: 
+  Drop: {fileID: 4458488892711097184, guid: 83e765efa39e1b84c933875e40b16a24, type: 3}
+  powerupName: Mine
+  powerupSound: {fileID: 8300000, guid: 6292d213ee87ae440a67634e6c4f554f, type: 3}
+  AmmoT: {fileID: 7635467052377565026, guid: b968fab5f17eab248aaff9afa9ddb65d, type: 3}
+  ammo: {fileID: 11400000, guid: 167b3d1f82af86d49b25431f2e714248, type: 2}
+  ammoAmount: 3

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0dfca9c05a1884b9e35f0301b46693, type: 3}
+  m_Name: Heal
+  m_EditorClassIdentifier: 
+  Drop: {fileID: 8283511361680435990, guid: a5a2d808dee89d247a84763750ffd443, type: 3}
+  powerupName: Heal
+  powerupSound: {fileID: 8300000, guid: 689d72bbd7e80cf4e94fb17aca17bf94, type: 3}
+  healAmount: 2
