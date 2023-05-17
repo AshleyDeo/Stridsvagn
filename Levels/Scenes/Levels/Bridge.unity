@@ -638,6 +638,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOver Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5955963599360610458, guid: 970b121f5c744fc4cb2c97ba8c46171f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1644152636}
+    - target: {fileID: 5955963599360610458, guid: 970b121f5c744fc4cb2c97ba8c46171f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5955963599360610461, guid: 970b121f5c744fc4cb2c97ba8c46171f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3250,7 +3260,7 @@ PrefabInstance:
     - target: {fileID: 4272081408036727520, guid: 7baf5794c133f7449a1616e3492d3893,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Test
+      value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 4272081408036727520, guid: 7baf5794c133f7449a1616e3492d3893,
         type: 3}
