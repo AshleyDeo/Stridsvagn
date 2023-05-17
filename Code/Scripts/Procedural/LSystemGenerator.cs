@@ -2,26 +2,29 @@ using System.Text;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace ashspace
+namespace strids
 {
     public class LSystemGenerator : MonoBehaviour {
         [SerializeField] private Rule[] _rules;
 		[SerializeField] private string _rootSentence;
-        [SerializeField, Range(0,10)] private int IterationLimit = 1;
+        [SerializeField, Range(0,10)] private int _iterationLimit = 1;
 
         [SerializeField] private bool _randomIgnoreRuleMod = true;
         [SerializeField] private float _ignoreRuleChance = 0.3f;
+        [SerializeField] private bool _logs = false;
+        [SerializeField] private Vector3 _transformation = Vector3.zero;
 
         void Start() {
-            Debug.Log(GenerateSentence());
+            Log(GenerateSentence());
+            //this.transform.position += _transformation;
         }
         public string GenerateSentence(string word = null) {
-            if (word == null) word = _rootSentence;
+            word ??= _rootSentence;
             return GrowRecursive(word);
         }
         private string GrowRecursive(string word, int index = 0) {
-            if(index >= IterationLimit) return word;
-            StringBuilder newWord = new StringBuilder();
+            if(index >= _iterationLimit) return word;
+            StringBuilder newWord = new();
             foreach (var c in word) {
                 newWord.Append(c);
                 ProcessRecursively(newWord, c, index);
@@ -38,6 +41,11 @@ namespace ashspace
                     newWord.Append(GrowRecursive(rule.GetResult(), index+1));
                 }
             }
+        }
+
+        private void Log(string message) {
+            if (_logs) return;
+            Debug.Log(message);
         }
     }
 }

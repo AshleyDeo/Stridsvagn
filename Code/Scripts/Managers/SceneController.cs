@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
 	public static SceneController Instance;
-
+	public string CurrentScene = "";
 	[SerializeField] private GameObject _loaderCanvas;
 	[SerializeField] private GameObject _loaderCam;
 	[SerializeField] private Slider _loadingBar;
@@ -24,6 +24,7 @@ public class SceneController : MonoBehaviour {
 	public async void LoadScene(string sceneName) {
 		if (GameManager.Instance.Paused) UnpauseGame();
 		var scene = SceneManager.LoadSceneAsync(sceneName);
+		CurrentScene = sceneName;
 		scene.allowSceneActivation = false;
 		_loaderCanvas.SetActive(true);
 		_loaderCam.SetActive(true);

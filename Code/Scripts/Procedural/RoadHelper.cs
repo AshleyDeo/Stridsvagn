@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace ashspace
+namespace strids
 {
     public class RoadHelper : MonoBehaviour {
         public GameObject[] _roadStraight;

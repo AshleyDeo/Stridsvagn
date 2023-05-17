@@ -24,8 +24,10 @@ MonoBehaviour:
   - {fileID: 5591962175324206869, guid: b2129ed7e036d9c4f98e89298a0f3553, type: 3}
   EnemyTypes:
   - {fileID: 11400000, guid: e19f96a67e3fdeb4ba65766acd2d4bae, type: 2}
+  - {fileID: 11400000, guid: 0d66f46629959d3418079b5b1f8cd4d5, type: 2}
+  AllyTypes: []
   NumCrates: 3
   NumEnemies: 5
   NumAllies: 0
-  MinLocation: {x: -10, y: -10}
-  MaxLocation: {x: 10, y: 10}
+  MinLocation: {x: -18, y: -15}
+  MaxLocation: {x: 18, y: 18}

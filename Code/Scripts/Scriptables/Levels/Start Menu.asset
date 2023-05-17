@@ -15,10 +15,11 @@ MonoBehaviour:
   LevelName: Test
   NextScene: {fileID: 0}
   Campaign: 0
-  Music: {fileID: 0}
+  Music: {fileID: 8300000, guid: a7624bfd359210b45a625aaa7b897aa6, type: 3}
   Lives: 5
   Buildings: []
   EnemyTypes: []
+  AllyTypes: []
   NumCrates: 2
   NumEnemies: 0
   NumAllies: 0

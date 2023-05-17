@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ashspace
+namespace strids
 {
     public class SimpleVisualizer : MonoBehaviour {
 		[SerializeField] private LSystemGenerator _LSystem;

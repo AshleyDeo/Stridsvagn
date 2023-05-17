@@ -13,15 +13,24 @@ MonoBehaviour:
   m_Name: City Center
   m_EditorClassIdentifier: 
   LevelName: CityCenter
-  NextScene: {fileID: 0}
+  NextScene: {fileID: 11400000, guid: f72215bb94cb897428d00d50ef8a735f, type: 2}
   Campaign: 0
-  Music: {fileID: 0}
+  Music: {fileID: 8300000, guid: a67daab00aa884e4493cf6a48442ee0d, type: 3}
   Lives: 5
-  Buildings: []
+  Buildings:
+  - {fileID: 4117088230299256098, guid: d410e843216df0648b6a9f8f8662a3d8, type: 3}
+  - {fileID: 4117088230299256098, guid: c5df34bbe5c02ef41af15a2c0a95bd92, type: 3}
+  - {fileID: 8372569986536082474, guid: 6bf0feaa31cab444183543698bb76d19, type: 3}
+  - {fileID: 1565097321551925759, guid: 8044a1ebae4999d498e5597fa02cc1b7, type: 3}
+  - {fileID: 1565097321551925759, guid: 65690ab5ffb76b645af5d24136b2d5bb, type: 3}
+  - {fileID: 8007137960207119968, guid: 620d8f6982176324e820344316af1709, type: 3}
+  - {fileID: 9172878835959875203, guid: 4856c513206ef7e49b494a324d1a4d68, type: 3}
   EnemyTypes:
   - {fileID: 11400000, guid: e19f96a67e3fdeb4ba65766acd2d4bae, type: 2}
-  NumCrates: 0
-  NumEnemies: 0
+  - {fileID: 11400000, guid: 0d66f46629959d3418079b5b1f8cd4d5, type: 2}
+  AllyTypes: []
+  NumCrates: 5
+  NumEnemies: 3
   NumAllies: 0
-  MinLocation: {x: -10, y: -10}
-  MaxLocation: {x: 10, y: 10}
+  MinLocation: {x: -18, y: -18}
+  MaxLocation: {x: 18, y: 18}

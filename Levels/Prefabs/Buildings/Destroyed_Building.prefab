@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1725952147432196129}
+  - component: {fileID: 6873694089025271202}
   m_Layer: 8
   m_Name: Destroyed_Building
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6873694089025271202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702338414114818800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.17, y: 0.98, z: 3.39}
+  m_Center: {x: 0, y: -0.97, z: 0}
 --- !u!1001 &1395857397373110476
 PrefabInstance:
   m_ObjectHideFlags: 0

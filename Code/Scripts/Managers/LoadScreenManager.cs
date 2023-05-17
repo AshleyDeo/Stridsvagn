@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace ashspace
+namespace strids
 {
     public class LoadScreenManager : MonoBehaviour {
         [Header("General Info")]

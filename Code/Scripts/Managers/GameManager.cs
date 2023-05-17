@@ -1,5 +1,5 @@
 using UnityEngine;
-using ashspace;
+using strids;
 
 public class GameManager : MonoBehaviour, ISaveable {
 	public static GameManager Instance { get; private set; }
@@ -45,46 +45,13 @@ public class GameManager : MonoBehaviour, ISaveable {
 		SceneController.Instance.LoadScene(level.LevelName);
 		Debug.Log(level.LevelName);
 	}
+	public void ReloadLevel() {
+		SceneController.Instance.LoadScene(CurrentLevel.LevelName);
+	}
 	public void LoadNextLevel() {
 		CurrentLevel = CurrentLevel.NextScene;
 		SceneController.Instance.LoadScene(CurrentLevel.LevelName);
 	}
-	//public void Start() => ChangeState(GameState.Starting);
-	//public void ChangeState(GameState newState) {
-	//	OnBeforeStateChanged?.Invoke(newState);
-	//	State = newState;
-	//	switch (newState) {
-	//		case GameState.Starting:
-	//			HandleStarting();
-	//			break;
-	//		case GameState.SpawningPlayer:
-	//			HandleStarting();
-	//			break;
-	//		case GameState.SpawningEnemies:
-	//			HandleStarting();
-	//			break;
-	//		case GameState.Win:
-	//			HandleStarting();
-	//			break;
-	//		case GameState.Dead:
-	//			HandleStarting();
-	//			break;
-	//	}
-	//	OnAfterStateChanged?.Invoke(newState);
-	//	Debug.Log($"New state: {newState}");
-	//}
-	//private void HandleStarting() {
-	//	ChangeState(GameState.SpawningPlayer);
-	//}
-	//private void HandleSpawningPlayer() {
-	//	ChangeState(GameState.SpawningEnemies);
-	//}
-	//private void HandleSpawningEnemy() {
-	//	ChangeState(GameState.Play);
-	//}
-	//private void HandlePlayMode() {
-
-	//}
 	public object SaveState() {
 		return new SaveData() {
 			Kills = this.Kills,

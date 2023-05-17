@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ashspace
+namespace strids
 {
     public class Visualizer : MonoBehaviour {
 		[SerializeField] private LSystemGenerator _LSystem;
@@ -17,8 +17,10 @@ namespace ashspace
         [Header("Debug")]
         [SerializeField] private GameObject _prefab;
         [SerializeField] private Material _lineMaterial;
+		[SerializeField] private Vector3 _transformation = Vector3.zero;
 
-        public int Length {
+
+		public int Length {
             get {
                 if (_length > 0) return _length;
                 else return 1;
@@ -29,7 +31,8 @@ namespace ashspace
             var sequence = _LSystem.GenerateSentence();
             VisualizeSequence(sequence);
             transform.localScale = new(_scale, 1, _scale);
-        }
+			this.transform.position += _transformation;
+		}
         private void VisualizeSequence(string sequence) {
             Stack<AgentParameters> savePoints = new();
             Vector3 currentPosition = Vector3.zero;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ashspace
+namespace strids
 {
     public class Waypoint : MonoBehaviour {
         [SerializeField] protected float _radius = 1f;

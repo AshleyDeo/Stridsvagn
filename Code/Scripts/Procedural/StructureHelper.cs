@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace ashspace {
+namespace strids {
     public class StructureHelper : MonoBehaviour {
         [SerializeField] private StructureType[] _structures;
         [SerializeField] private GameObject[] _extras;

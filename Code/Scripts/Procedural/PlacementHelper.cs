@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ashspace {
+namespace strids {
     public static class PlacementHelper {
         public static List<Direction> FindNeighbour(Vector3Int pos, ICollection<Vector3Int> collection) {
             List<Direction> neigbourDir = new();

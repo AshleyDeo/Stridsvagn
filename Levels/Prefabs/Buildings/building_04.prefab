@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6661637796718815392}
   - component: {fileID: 5575455000357233878}
+  - component: {fileID: 3142522889507190474}
   m_Layer: 8
   m_Name: building_04
   m_TagString: Untagged
@@ -53,6 +54,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.46, z: -0.78}
   m_TimeToStationary: 0.5
+--- !u!65 &3142522889507190474
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372569986536082474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.73, z: 2.94}
+  m_Center: {x: 0, y: 0.5, z: -0.8}
 --- !u!1001 &437641382769191692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -388,7 +402,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 65cd09c7c53526547a5dbeb489dd4334,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65cd09c7c53526547a5dbeb489dd4334,
         type: 3}

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ashspace {
+namespace strids {
     [Serializable]
     public class StructureType {
         [SerializeField] private GameObject[] _prefabs;

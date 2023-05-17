@@ -30,6 +30,7 @@ public class TankBase : MonoBehaviour, IDestructible {
 
 	[Header("Debug", order = 3)]
 	[SerializeField] protected Logger _logger;
+	[SerializeField] protected bool _showLogs;
 	[SerializeField] protected bool _showGizmos;
 
 	protected virtual void Awake() {
@@ -64,7 +65,7 @@ public class TankBase : MonoBehaviour, IDestructible {
 	public AmmoType GetProjectile() => _ammo;
 	protected virtual void Shoot() {
 		if (_firePoint == null || _ammo == null) {
-			_logger.Log("TankBase - Shoot(): No firePoint", this);
+			Log("TankBase - Shoot(): No firePoint");
 			return;
 		}
 		if (_ammo.IsDrop) { _ammo.Use(transform); }
@@ -168,6 +169,11 @@ public class TankBase : MonoBehaviour, IDestructible {
 		}
 		_shield.SetActive(false);
 	}
+	protected void Log (string message) {
+		if (!_showLogs) return;
+		if (_logger) _logger.Log(message, this);
+		else Debug.Log(message);
+	}
 	protected virtual void OnDrawGizmos() {
 		if (_showGizmos) {
 			//Detection Range
@@ -175,4 +181,29 @@ public class TankBase : MonoBehaviour, IDestructible {
 			Gizmos.DrawWireSphere(transform.position, _tank.DetectDist);
 		}
 	}
+	//[System.Serializable]
+	//private struct SaveData {
+	//	public TankType Tank;
+	//	public Health Health;
+	//	public Vector3 Position;
+	//	public AmmoType Ammo;
+	//	public int AmmoLeft;
+	//}
+	//public object SaveState () {
+	//	return new SaveData() {
+	//		Tank = this._tank,
+	//		Health = this._health,
+	//		Position = this.transform.position,
+	//		Ammo = this._ammo,
+	//		AmmoLeft = this._ammoCountdown
+	//	};
+	//}
+	//public void LoadState (object state) {
+	//	var saveData = (SaveData)state;
+	//	_tank = saveData.Tank;
+	//	_health = saveData.Health;
+	//	this.transform.position = saveData.Position;
+	//	_ammo = saveData.Ammo;
+	//	_ammoCountdown = saveData.AmmoLeft;
+	//}
 }

@@ -1,4 +1,4 @@
-Shader "Custom Shaders/Grass" {
+Shader "CustomShaders/Grass" {
     Properties {
         _BaseColor("Base Color", Color) = (1, 1, 1, 1)
         _TipColor("Tip Color", Color) = (1, 1, 1, 1)
@@ -39,6 +39,7 @@ Shader "Custom Shaders/Grass" {
 		HLSLINCLUDE
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
 
 			#pragma multi_compile _MAIN_LIGHT_SHADOWS
 			#pragma multi_compile _MAIN_LIGHT_SHADOWS_CASCADE

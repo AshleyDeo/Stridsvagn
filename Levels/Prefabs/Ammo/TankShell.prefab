@@ -5088,7 +5088,7 @@ MonoBehaviour:
   damage: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   Impact: {fileID: 3192348663383216902, guid: 8f2de10d0fbe96349beb00877b2734e0, type: 3}
   showLogs: 0
 --- !u!54 &4376788182724277639

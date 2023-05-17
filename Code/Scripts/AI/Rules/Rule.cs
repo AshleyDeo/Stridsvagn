@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ashspace {
+namespace strids {
 	[CreateAssetMenu(fileName = "New Rule", menuName = "Assets/Rule")]
 	public class Rule : ScriptableObject {
 		public string Letter;

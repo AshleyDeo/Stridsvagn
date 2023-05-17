@@ -1,30 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using TMPro;
-using ashspace;
+using strids;
 
 public class GameControllerTest : MonoBehaviour {
     public static GameControllerTest Instance { get; private set; }
-    public static int enemyCount = 0;
-    public static int allyCount = 0;
 
-    //unchenged
+    [SerializeField] private int allyCount = 0;
+    [SerializeField] private int enemyCount = 0;
     [SerializeField] private PauseGame pauseMenu;
 
-    public Text gameText;
-    public Text enemiesLeftText;
+    public TMP_Text enemiesLeftText;
 
-    public GameObject gameOverMenu;
+    public Canvas gameOverMenu;
     public TMP_Text gameOverText;
 
     void OnEnable() {
         PlayerTank.OnPlayerDead += ActivateGameOverMenu;
+        EnemyTank.EnemyLive += AddEnemies;
+        EnemyTank.EnemyDead += RemoveEnemies;
     }
     void OnDisable() {
         PlayerTank.OnPlayerDead -= ActivateGameOverMenu;
-    }
+		EnemyTank.EnemyLive -= AddEnemies;
+		EnemyTank.EnemyDead -= RemoveEnemies;
+	}
     private void Awake() {
 		if (Instance != null && Instance != this) {
 			Destroy(this);
@@ -33,11 +32,18 @@ public class GameControllerTest : MonoBehaviour {
 			Instance = this;
 		}
     }
+    void AddEnemies() {
+        enemyCount++;
+    }
+    void RemoveEnemies() {
+        enemyCount--;
+        if(enemyCount == 0) ActivateGameOverMenu(false);
+    }
     public int CountEnemies() => enemyCount;
     public int CountAllies() => allyCount;
     public void ActivateGameOverMenu(bool isDead) {
-        pauseMenu.Paused();
-        gameOverMenu.SetActive(true);
+		Time.timeScale = 0;
+        gameOverMenu.enabled = true;
         GameManager.Instance.CurrLives--;
         if (isDead) {
             gameOverText.text = "Defeated";

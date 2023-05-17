@@ -1,4 +1,4 @@
-Shader "My Shaders/Glow"
+Shader "Customhaders/Glow"
 {
     Properties
     {

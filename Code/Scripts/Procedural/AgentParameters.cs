@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ashspace
+namespace strids
 {
     public class AgentParameters {
         public Vector3 position, direction;

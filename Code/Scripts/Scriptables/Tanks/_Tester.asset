@@ -19,7 +19,7 @@ MonoBehaviour:
   Codename: Debugger
   Flavor: The best SWATing vehicle
   Bonus: +100 bugs (Where did they come from?)
-  MaxHealth: 50
+  MaxHealth: 20
   OriginalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
   DetectDist: 5
   FireRate: 1

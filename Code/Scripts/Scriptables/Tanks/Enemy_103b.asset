@@ -20,7 +20,7 @@ MonoBehaviour:
   Flavor: 
   Bonus: 
   MaxHealth: 50
-  OriginalAmmo: {fileID: 11400000, guid: f9fb9dade3540c74bb49a78d8aeae594, type: 2}
+  OriginalAmmo: {fileID: 11400000, guid: ab6eb93f785f7f842be36090c524cdc0, type: 2}
   DetectDist: 5
   FireRate: 3
   MoveSpeed: 2

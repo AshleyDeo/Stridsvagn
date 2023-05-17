@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -144379604828382673}
   - component: {fileID: 7855901000290190305}
   - component: {fileID: 7337433141611389455}
+  - component: {fileID: 8640004547798419307}
   m_Layer: 8
   m_Name: WoodenCrate
   m_TagString: Untagged
@@ -129,22 +130,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 1
-  broken: {fileID: 1989285053048313558, guid: ec5df01a266f70a498eb8dfc0ee19a40, type: 3}
-  pickups:
-  - {fileID: 3753821791928497993, guid: 228813e6141c5d54c88df62f8c8b06fc, type: 3}
-  - {fileID: 1643225624863086274, guid: 303ea5a6e54bd3e449ca170435da632c, type: 3}
-  - {fileID: 8870253427324865798, guid: 7dfa641a48b795d4190657fef09b2b4d, type: 3}
-  - {fileID: 5000523895892679601, guid: 321f0a2d5d9e89748beccd439caa4a08, type: 3}
-  powerups:
+  _broken: {fileID: 1989285053048313558, guid: ec5df01a266f70a498eb8dfc0ee19a40, type: 3}
+  _powerups:
   - {fileID: 11400000, guid: 5b08dfc646d40784ab07cf2976c6c147, type: 2}
   - {fileID: 11400000, guid: 065a73d1389f13348b55212509987ab3, type: 2}
   - {fileID: 11400000, guid: 88e3a53821d1d6342bd9e4dd5f204fbf, type: 2}
   - {fileID: 11400000, guid: 2e6e867908e0ba944a02525e48df4c8a, type: 2}
-  xRange: {x: -25, y: 25}
-  zRange: {x: -25, y: 25}
-  layerMask:
+  _layerMask:
     serializedVersion: 2
-    m_Bits: 961
-  explosion: {fileID: 3192348663383216902, guid: 8f2de10d0fbe96349beb00877b2734e0,
+    m_Bits: 0
+  _explosion: {fileID: 3192348663383216902, guid: 8f2de10d0fbe96349beb00877b2734e0,
     type: 3}
-  destroyAudio: {fileID: 8300000, guid: 175cc29f85e352e4dbfc2cb22b8ff9a7, type: 3}
+  _destroyAudio: {fileID: 8300000, guid: 175cc29f85e352e4dbfc2cb22b8ff9a7, type: 3}
+--- !u!114 &8640004547798419307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5677509722009916741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aa1201a04cb9f4b9a58acfc8184498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 0
+  currentHP: 0

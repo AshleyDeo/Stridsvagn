@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ashspace {
+namespace strids {
     public class Respawn : MonoBehaviour {
 
     }

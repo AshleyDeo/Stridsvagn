@@ -17,9 +17,15 @@ MonoBehaviour:
   Campaign: 1
   Music: {fileID: 8300000, guid: a67daab00aa884e4493cf6a48442ee0d, type: 3}
   Lives: 5
-  Buildings: []
+  Buildings:
+  - {fileID: 2862205922489148617, guid: 8c16f28035289604bb6991be2b6dfac2, type: 3}
+  - {fileID: 8372569986536082474, guid: 6bf0feaa31cab444183543698bb76d19, type: 3}
+  - {fileID: 3003073464945155787, guid: c1a79bd91a8fdf5409f1c38fe2926014, type: 3}
+  - {fileID: 3003073464945155787, guid: c1a79bd91a8fdf5409f1c38fe2926014, type: 3}
   EnemyTypes:
   - {fileID: 11400000, guid: e19f96a67e3fdeb4ba65766acd2d4bae, type: 2}
+  - {fileID: 11400000, guid: 0d66f46629959d3418079b5b1f8cd4d5, type: 2}
+  AllyTypes: []
   NumCrates: 3
   NumEnemies: 4
   NumAllies: 0

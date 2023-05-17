@@ -3,17 +3,20 @@ using TMPro;
 
 public class GameHUD : MonoBehaviour {
 	[SerializeField] GameControllerTest _controller = null;
-	[SerializeField] TankBase tank;
+	[SerializeField] PlayerTank tank;
 	[SerializeField] TMP_Text ammo;
 	[SerializeField] TMP_Text allies;
 	[SerializeField] TMP_Text enemies;
+	void Start() {
+		_controller = GameControllerTest.Instance;
+	}
 	void Update() {
 		UpdateAmmo();
 		UpdateAllies();
 		UpdateEnemies();
 	}
 	void UpdateAmmo() {
-		if (tank.GetProjectile() == null) return;
+		if (tank == null || tank.GetProjectile() == null) return;
 		ammo.text = tank.GetProjectile().AmmoName;
 	}
 	void UpdateAllies() {

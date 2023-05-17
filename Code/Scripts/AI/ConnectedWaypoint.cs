@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ashspace {
+namespace strids {
     public class ConnectedWaypoint : Waypoint {
 		[Header("Connect Waypoints")]
 		[SerializeField] protected float _connectRadius = 10f;

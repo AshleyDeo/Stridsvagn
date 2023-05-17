@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ashspace
+namespace strids
 {
     public class PauseGame : MonoBehaviour {
         [SerializeField] private InputAction _pauseButton;

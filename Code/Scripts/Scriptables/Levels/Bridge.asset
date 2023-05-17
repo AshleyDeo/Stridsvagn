@@ -15,11 +15,13 @@ MonoBehaviour:
   LevelName: Bridge
   NextScene: {fileID: 11400000, guid: bb8f6034ccc70784094f1ae825b9cb26, type: 2}
   Campaign: 0
-  Music: {fileID: 0}
+  Music: {fileID: 8300000, guid: a7624bfd359210b45a625aaa7b897aa6, type: 3}
   Lives: 5
   Buildings: []
   EnemyTypes:
   - {fileID: 11400000, guid: e19f96a67e3fdeb4ba65766acd2d4bae, type: 2}
+  - {fileID: 11400000, guid: 0d66f46629959d3418079b5b1f8cd4d5, type: 2}
+  AllyTypes: []
   NumCrates: 0
   NumEnemies: 0
   NumAllies: 0

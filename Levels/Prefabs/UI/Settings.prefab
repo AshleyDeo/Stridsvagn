@@ -1585,6 +1585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 24100000, guid: e3809d61429a34845873aac2e29d9efc, type: 2}
   _resolutionDropdown: {fileID: 5900387033923264464}
+  _monitorText: {fileID: 0}
 --- !u!1 &5900387033667853216
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,6 +4024,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
         type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
+        type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -4030,6 +4041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 5900387033659975001}
+    - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
         type: 3}
@@ -4436,7 +4452,7 @@ PrefabInstance:
     - target: {fileID: 5741460531141936971, guid: e671f9f7dfac0364a9c7ae554be4f2b1,
         type: 3}
       propertyPath: m_fontSize
-      value: 80
+      value: 77.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e671f9f7dfac0364a9c7ae554be4f2b1, type: 3}
@@ -5361,11 +5377,6 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
         type: 3}
-      propertyPath: m_IsOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
-        type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -5373,16 +5384,16 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5900387033659975001}
     - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DebugObjs
+      value: ToggleDebugger
       objectReference: {fileID: 0}
     - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Logger, Assembly-CSharp
+      value: ashspace.SettingsMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3326486261429092024, guid: da096ef6713e1de4da4c0a44795eb1d5,
         type: 3}

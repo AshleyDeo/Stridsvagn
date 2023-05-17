@@ -1,4 +1,4 @@
-Shader "My Shaders/Health Bar" {
+Shader "CustomShaders/Health Bar" {
     Properties {
         [NoScaleOffset]_MainTex ("Texture", 2D) = "white" {}
         _Health ("Health", Range(0,1)) = 1

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine;
 
-namespace ashspace {
+namespace strids {
 	/// <summary>
 	/// A reusable component with a self-contained UI for rebinding a single action.
 	/// </summary>

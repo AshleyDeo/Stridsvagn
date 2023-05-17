@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ashspace {
+namespace strids {
 	[CreateAssetMenu(fileName = "New Level", menuName = "Assets/Level")]
 	public class LevelInfo : ScriptableObject {
 		[Header("Scene")]
@@ -14,6 +14,7 @@ namespace ashspace {
 		public int Lives;
         public GameObject[] Buildings;
         public TankType[] EnemyTypes;
+        public TankType[] AllyTypes;
 
 		[Header("Procedural")]
 		public int NumCrates;
